@@ -1,7 +1,7 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import org.jsoup.nodes.Element;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -10,37 +10,65 @@ import java.net.URLEncoder;
 public class WebScraper {
     public static void main(String[] args) {
         try {
-            System.out.print(performWebSearch("H2X2G1"));
+            System.out.print(csvDownloader(
+                    accessWebsite(
+                            buildSearchUrl("H2X2G1")
+                    )
+            )
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static String performWebSearch(String searchQuery) {
-        String responseContent = "";
+    public static String buildSearchUrl(String input) {
+        if (input.length() < 6) {
+            throw new IllegalArgumentException("Input string must be at least 6 characters long.");
+        }
+
+        String baseUrl = "https://www.ourcommons.ca/Members/en/search?parliament=all&searchText=";
+        String firstThreeLetters = input.substring(0, 3);
+        String lastThreeLetters = input.substring(input.length() - 3);
+
+        return baseUrl + firstThreeLetters + "%20" + lastThreeLetters;
+    }
+    public static String accessWebsite (String urlInput){
         try {
-            String baseUrl = "https://www.ourcommons.ca/Members/en/search"; // Update with the actual search URL
-            String encodedQuery = URLEncoder.encode(searchQuery, "UTF-8");
-            String fullUrl = baseUrl + "?query=" + encodedQuery; // Update parameter name if necessary
+            Document doc = Jsoup.connect(urlInput).get();
 
-            URL url = new URL(fullUrl);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("GET");
+            // Assume the link to the parliamentarian member can be uniquely identified.
+            // You need to replace ".member-link" with the actual CSS selector that matches the link in the search results.
+            Element memberLink = doc.select("a.ce-mip-mp-tile").first();
 
-            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String inputLine;
-            StringBuilder response = new StringBuilder();
-
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
+            if (memberLink != null) {
+                String memberUrl = memberLink.absUrl("href");
+                return "Parliamentarian Member URL: " + memberUrl;
+            } else {
+                return "Postal Code Not Found: " + urlInput;
             }
-            in.close();
-            responseContent = response.toString();
+        } catch (Exception e) {
+            return "Error Somewhere else";
+        }
+    }
 
+    public static String csvDownloader(String csvUrlI) {
+        String csvUrl = csvUrlI + "/votes/csv";
+        System.out.println("Downloading CSV from: " + csvUrl); // Debugging print statement
+        String saveFilePath = "alexmiller/bills.csv"; // Update this to a valid path
+
+        try (InputStream in = new URL(csvUrl).openStream();
+             BufferedInputStream bis = new BufferedInputStream(in);
+             FileOutputStream fos = new FileOutputStream(saveFilePath)) {
+
+            byte[] dataBuffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = bis.read(dataBuffer, 0, 1024)) != -1) {
+                fos.write(dataBuffer, 0, bytesRead);
+            }
+            return csvUrl;
         } catch (Exception e) {
             e.printStackTrace();
-            responseContent = "Error performing web search";
+            return "Error Somewhere";
         }
-        return responseContent;
     }
 }
