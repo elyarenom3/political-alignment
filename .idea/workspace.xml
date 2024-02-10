@@ -41,10 +41,18 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Git",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.CSVtoHashMap">
+    <configuration name="CSVtoHashMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CSVtoHashMap" />
+      <module name="political-alignment" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WebScraper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="WebScraper" />
       <module name="political-alignment" />
@@ -54,6 +62,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CSVtoHashMap" />
         <item itemvalue="Application.WebScraper" />
       </list>
     </recent_temporary>
@@ -67,6 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1707587231822</updated>
       <workItem from="1707587238541" duration="4595000" />
+      <workItem from="1707595450668" duration="2218000" />
     </task>
     <servers />
   </component>
