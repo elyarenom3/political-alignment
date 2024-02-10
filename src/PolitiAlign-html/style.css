@@ -5,10 +5,10 @@
 }
 
 :root {
-  --darkBlue: #010a43;
+  --darkBlue: #ffffff;
   --lightGreen: #a7e9af;
-  --whiteClr: #fff;
-  --lightBlue: rgba(0, 64, 128, 0.2);
+  --whiteClr: #9ec4d5;
+  --lightBlue: rgb(0, 127, 164);
   --intenseBlue: #46b3e6;
 }
 
@@ -24,10 +24,10 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  padding: 1rem;
+  padding: 0;
   font-family: "Roboto", sans-serif;
   color: var(--darkBlue);
-  background-color: #fdfdfd;
+  background-color: #1d1263;
 }
 
 .container {
