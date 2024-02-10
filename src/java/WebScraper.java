@@ -8,16 +8,25 @@ import java.net.URLEncoder;
 
 
 public class WebScraper {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         try {
             System.out.print(csvDownloader(
-                    accessWebsite(
-                            buildSearchUrl("H2X2G1")
+                            accessWebsite(
+                                    buildSearchUrl("H2X2G1")
+                            )
                     )
-            )
             );
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }*/
+
+    public static String alltogether (String pCode, String place) {
+        try {
+            return csvDownloader(accessWebsite(buildSearchUrl(pCode)), place);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Error";
         }
     }
 
@@ -42,7 +51,7 @@ public class WebScraper {
 
             if (memberLink != null) {
                 String memberUrl = memberLink.absUrl("href");
-                return "Parliamentarian Member URL: " + memberUrl;
+                return memberUrl;
             } else {
                 return "Postal Code Not Found: " + urlInput;
             }
@@ -51,11 +60,9 @@ public class WebScraper {
         }
     }
 
-    public static String csvDownloader(String csvUrlI) {
+    public static String csvDownloader (String csvUrlI, String file) {
         String csvUrl = csvUrlI + "/votes/csv";
-        System.out.println("Downloading CSV from: " + csvUrl); // Debugging print statement
-        String saveFilePath = "alexmiller/bills.csv"; // Update this to a valid path
-
+        String saveFilePath = file + "bill.csv";
         try (InputStream in = new URL(csvUrl).openStream();
              BufferedInputStream bis = new BufferedInputStream(in);
              FileOutputStream fos = new FileOutputStream(saveFilePath)) {
@@ -65,7 +72,7 @@ public class WebScraper {
             while ((bytesRead = bis.read(dataBuffer, 0, 1024)) != -1) {
                 fos.write(dataBuffer, 0, bytesRead);
             }
-            return csvUrl;
+            return saveFilePath;
         } catch (Exception e) {
             e.printStackTrace();
             return "Error Somewhere";
