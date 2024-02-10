@@ -22,9 +22,14 @@ html {
 }
 
 body {
+    background-image: url('images/hero-bg.png');
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    height: 100vh; /* Make sure the body covers the whole viewport */
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
+  margin: 4px;
+  padding: 4px;
   font-family: "Roboto", sans-serif;
   color: var(--darkBlue);
   background-color: #1d1263;
@@ -33,7 +38,7 @@ body {
 .container {
   min-height: 100vh;
   display: grid;
-  grid-gap: 40px;
+  grid-gap: 0px;
   align-content: center;
 }
 
@@ -372,9 +377,9 @@ label {
   font-family: inherit;
   width: 100%;
   resize: vertical;
-  min-height: 100px;
+  min-height: 10px;
   max-width: 300px;
-  color: var(--darkBlue);
+  color: #1d1263;
   -webkit-appearance: none;
 }
 

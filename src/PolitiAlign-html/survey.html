@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Political alignment questionnaire</title>
+  <title>Political Alignment Form</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css">
 
@@ -11,10 +11,10 @@
 <!-- partial:index.partial.html -->
 
 <div class="container">
-  <header class="header">
-    <h1 id="title" class="header__title">Product Survey Form</h1>
+  <header class="header2">
+    <h1 id="title" class="header__title">Political Alignment Form</h1>
     <p id="description" class="header__description">
-      We would love to hear your thoughts on how we can improve your experience.
+      All of these questions, bar postcode, (because we need to identify your MP by area) are optional and not comprehensive, but are designed to try to identify how much you agree with your MP's views and legislation so you can best decide who represents you in parliament.
     </p>
     <img src="https://res.cloudinary.com/alexandracaulea/image/upload/v1585333913/illustration_x46ict.svg" alt="" aria-hidden="true" class="illustration" />
   </header>
@@ -29,25 +29,41 @@
       </div>
 
       <section class="survey__panel survey__panel--current" aria-hidden="false" data-index="1" data-panel="firstPanel" data-requirement="option">
-        <h2 class="survey__panel__question">
-          <span class="visuallyhidden">Question 1 of 5 </span>How long have you been using our product?
+        <form id="myForm">
+          <h2 class="survey__panel__question">
+            <span class="visuallyhidden">Question 1 of 5 </span> Please enter your postcode:
+          </h2>
+          <div class="form-group">
+            <label for="postcode">Postcode:</label>
+            <input type="text" id="postcode" name="postcode" required>
+            <p id="postcodeError" style="color: red;"></p>
+          </div>
+        </form>
+
+        
+
+        <span class="visuallyhidden">Question 1.5 of 5 </span> <br> What do you identify as? :
         </h2>
         <div class="survey__panel__period">
           <div class="form-group">
-            <input id="never" type="radio" name="question_1" value="never" />
-            <label for="never">never</label>
+            <input id="female" type="radio" name="question_1" value="female" />
+            <label for="female">Female</label>
           </div>
           <div class="form-group">
-            <input id="lessthenoneyear" type="radio" name="question_1" value="lessthenoneyear" />
-            <label for="lessthenoneyear">0 - 1 year</label>
+            <input id="male" type="radio" name="question_1" value="male" />
+            <label for="male">Male</label>
           </div>
           <div class="form-group">
-            <input id="onetotwoyears" type="radio" name="question_1" value="onetotwoyears" />
-            <label for="onetotwoyears">1 - 2 years</label>
+            <input id="NonBinary" type="radio" name="question_1" value="NonBinary" />
+            <label for="NonBinary">Non-Binary</label>
           </div>
           <div class="form-group">
-            <input id="morethentwoyears" type="radio" name="question_1" value="morethentwoyears" />
-            <label for="morethentwoyears"><span class="visuallyhidden">more then</span><span aria-hidden="true">></span> 2 years</label>
+            <input id="other1" type="radio" name="question_1" value="other1" />
+            <label for="other">Other</label>
+          </div>
+          <div class="form-group">
+            <input id="prefernottoanswer1" type="radio" name="question_1" value="Null" />
+            <label for="prefernottoanswer1">Prefer not to answer</label>
           </div>
         </div>
         <p class="error-message"></p>
@@ -55,24 +71,24 @@
 
       <section class="survey__panel" aria-hidden="true" data-index="2" data-panel="secondPanel" data-requirement="option">
         <h2 class="survey__panel__question">
-          <span class="visuallyhidden">Question 2 of 5 </span>How do rate your overall satisfaction about the product?
+          <span class="visuallyhidden">Question 2 of 5 </span> What is your income (CAD) ?
         </h2>
         <div class="survey__panel__satisfaction">
           <div class="form-group">
-            <input id="notsatified" type="radio" class="radiobox" name="question_2" value="Not Satisfied" />
-            <label for="notsatified">Not Satisfied</label>
+            <input id="lessthan55" type="radio" class="radiobox" name="question_2" value="lessthan55" />
+            <label for="lessthan55"> Less than 40k a year </label>
           </div>
           <div class="form-group">
-            <input id="quitesatisfied" type="radio" class="radiobox" name="question_2" value="Quite Satisfied" />
-            <label for="quitesatisfied">Quite Satisfied</label>
+            <input id="40to100" type="radio" class="radiobox" name="question_2" value="40to100" />
+            <label for="40to100"> 40k to 100k per year </label>
           </div>
           <div class="form-group">
-            <input id="satisfied" type="radio" class="radiobox" name="question_2" value="Satisfied" />
-            <label for="satisfied">Satisfied</label>
+            <input id="over100" type="radio" class="radiobox" name="question_2" value="over100" />
+            <label for="over100"> over 100k per year </label>
           </div>
           <div class="form-group">
-            <input id="completelysatisfied" type="radio" class="radiobox" name="question_2" value="Completely Satisfied" />
-            <label for="completelysatisfied">Completely Satisfied</label>
+            <input id="prefernottoanswer2" type="radio" class="radiobox" name="question_2" value="Null" />
+            <label for="prefernottoanswer2"> Prefer not to answer </label>
           </div>
         </div>
         <p class="error-message"></p>
@@ -405,6 +421,7 @@
           Prev
         </button>
         <button class="button" type="button" name="next" aria-label="Next" aria-hidden="false">Next</button>
+        <a href="index.html" class="button" aria-label="Home">Home</a>
         <button class="button" type="submit" id="submit" name="submit" disabled="disabled" aria-hidden="true">
           Submit
         </button>
@@ -415,6 +432,6 @@
 
 <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
 <!-- partial -->
-  <script  src="./script.js"></script>
+  <script  src="js/script.js"></script>
 </body>
 </html>
