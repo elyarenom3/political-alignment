@@ -10,3 +10,10 @@ Bilingual Interface: Fully accessible in both English and French, reflecting Can
 Focus on Indigenous Issues: Special consideration of Indigenous issues within the matching algorithm.
 
 Educational Resources: Provides users with information about Canada's political system and the importance of each issue.
+
+
+These are the resources we are data scraping from:
+-
+-
+
+In the future, we plan to make this more comprehensive by adding more diverse resources but since this is for the mcwics hackathon and we are under time constraint, we are only using the resources above. 
