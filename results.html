@@ -24,7 +24,12 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
-
+    <style>
+        /* This CSS targets elements with the 'info-text' class and sets their color to white */
+        .info-text {
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -78,59 +83,53 @@
         </div>
     </header>
     <!-- end header section -->
+    <section class="client_section layout_padding">
+        <div class="container">
+            <div class="heading_container heading_center psudo_white_primary mb_45">
+                <h2>
+                    Your <span> Results</span>
+                </h2>
+            </div>
+            <h6 class="info-text">
+               Obviously these are not exact values, but they should promote some further research, thank you for using our website!
+                <br>
+                <br>
+                Your MP is: <span id="politician">[politicianName]</span>
+                <br>
+                <br>
+                Overall, your agreement rate is <span id="totalagreementrate">[totalAgreementRate]</span>
+<br><br>
 
-    <div id="surveyResults">style="color: white;"</div>
+                For these specific issues, here are your agreement rates:
+                <br>  <br>
+                Indigenous rights: <span id="indigenousrightsrate">[indigenousRightsRate]</span>
+                <br>
+                LGBTQ+ issues: <span id="lgbtqrate">[lgbtqRate]</span>
+                <br>
+                Immigration: <span id="immigrationrate">[immigrationRate]</span>
+                <br>
+                Fiscal Policy: <span id="fiscalrate">[fiscalRate]</span>
+                <br>
+                Housing Affordability policies: <span id="housing">[housingAffordability]</span>
+                <br>
+                Healthcare: <span id="healthcare">[healthcare]</span>
+                <br>
+                Data privacy: <span id="dataprivacy">[dataPrivacy]</span>
+                <br>
+
+            </h6>
+
+            </div>
+
+    </section>
+
+
+    <!--<div id="surveyResults"></div>
     const postcode = surveyResults.postcode;
-    const indigenousRightsRating = surveyResults.indigenousrights;
+    const indigenousRightsRating = surveyResults.indigenousrights;-->
 
-    <head>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            google.charts.load('current', {'packages':['corechart']});
-            google.charts.setOnLoadCallback(drawChart);
-            function drawChart() {
 
-                var data = google.visualization.arrayToDataTable([
-                    ['Crash Type', '2014'],
-                    ['Single Vehicle',     ,
-                    ['Involving Large Truck',      300],
-                    ['Involving Speeding',  991],
-                    ['Involving Rollover', 692],
-                    ['Involving Roadway Departure',    1368],
-                    ['Involving Intersection',    802]
-                ]);
 
-                var options = {
-                    pieSliceText: 'Single Vehicle',
-                    slices: {  0: {color: '#f7b15b', offset: 0.2},
-                        1: {color: '#ffca71'},
-                        2: {color: '#be7f29'},
-                        3: {color: '#9f6407'},
-                        4: {color: '#7c4600'},
-                        5: {color: '#5d2d00'},
-                    },
-
-                    backgroundColor: '#f9f9fb',
-                    chartArea: {left:0, top:20, width:'100%', height:'90%'},
-                };
-
-                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-                chart.draw(data, options);
-            }
-
-        </script>
-        <style>
-            #piechart {
-                min-height:300px;
-            }
-        </style>
-    </head>
-
-    <div align="center">
-        <p>California Fatalities by Crash Type</p>
-        <div id="piechart"></div>
-        <p><small>Source: National Highway Traffic Safety Administration, 2014</small></p>
-    </div>
 
 <!-- jQery -->
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
