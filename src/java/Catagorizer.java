@@ -5,6 +5,12 @@ public class Catagorizer {
     public static void main(String[] args) {
         String file = "/Users/alexmiller/HackStuff/DataSet copy.csv";
         envir(file);
+        lgbt(file);
+        Economy(file);
+        Housing(file);
+        FN(file);
+        HealthCare(file);
+
     }
 
     public static void Issue(String filepath, String[] Buzzwords,
@@ -22,7 +28,7 @@ public class Catagorizer {
             String lowerSummary;
             lowerSummary = Summeries.get(keys[i]).toLowerCase();
             String noPunctuation = lowerSummary.replaceAll("[,.]", "");
-            String[] words = lowerSummary.split(" ");
+            String[] words = lowerSummary.split("");
             int n = 0;
             for (String w : Buzzwords) {
                 if (lowerSummary.contains(w)) {
