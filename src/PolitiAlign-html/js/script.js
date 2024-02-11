@@ -30,9 +30,6 @@ function Survey(survey) {
   const options = {
     question1Radios,
     question2Radios,
-    question3CheckBoxes,
-    question4Radios,
-    question4Textarea,
     question5Name,
     question5Email,
     question5Country,
@@ -45,14 +42,28 @@ function Survey(survey) {
       let index = panel.dataset.index;
       let panelName = panel.dataset.panel;
       let question = panel
-        .querySelector(".survey__panel__question")
-        .textContent.trim();
+          .querySelector(".survey__panel__question")
+          .textContent.trim();
       formData[index] = {
         panelName: panelName,
         question: question
       };
     });
   }
+
+
+  document.getElementById('postcode').addEventListener('input', function() {
+    var postcode = document.getElementById('postcode').value;
+    var regex = /^[A-Z]\d[A-Z]\s?\d[A-Z]\d$/i; // Case-insensitive (i flag)
+    var errorMsg = document.getElementById('postcodeError');
+
+    if (regex.test(postcode)) {
+      errorMsg.textContent = ''; // Clear error message if postcode is valid
+    } else {
+      errorMsg.textContent = 'Invalid postcode. Please enter a valid Canadian postcode'; // Show error message
+    }
+  });
+
 
   function updateProgressbar() {
     let index = currentPanel.dataset.index;
@@ -144,7 +155,8 @@ function Survey(survey) {
   }
 
   function checkRequired(input) {
-    if (input.value.trim() === "") {
+    const index = currentPanel.dataset.index;
+    if (input.value.trim() === "" && +index !== 3) {
       showError(input, `${getName(input)} is required`);
     } else {
       noErrors(input);

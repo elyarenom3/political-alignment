@@ -8,7 +8,6 @@
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
 
 <div class="container">
   <header class="header2">
@@ -20,7 +19,7 @@
   </header>
   <main class="main">
     <form action="#" method="GET" id="survey-form" class="survey" novalidate>
-      <div class="progressbar" tabindex="0" role="progressbar" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" aria-valuetext="Question 1 of 5: How long have you been using our product?">
+      <div class="progressbar" tabindex="0" role="progressbar" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" aria-valuetext="">
         <span class="progressbar__step active" aria-hidden="true"></span>
         <span class="progressbar__step" aria-hidden="true"></span>
         <span class="progressbar__step" aria-hidden="true"></span>
@@ -29,20 +28,16 @@
       </div>
 
       <section class="survey__panel survey__panel--current" aria-hidden="false" data-index="1" data-panel="firstPanel" data-requirement="option">
-        <form id="myForm">
-          <h2 class="survey__panel__question">
-            <span class="visuallyhidden">Question 1 of 5 </span> Please enter your postcode:
-          </h2>
-          <div class="form-group">
-            <label for="postcode">Postcode:</label>
-            <input type="text" id="postcode" name="postcode" required>
-            <p id="postcodeError" style="color: red;"></p>
-          </div>
-        </form>
-
-        
-
-        <span class="visuallyhidden">Question 1.5 of 5 </span> <br> What do you identify as? :
+        <h2 class="survey__panel__question">
+          <span class="visuallyhidden">Question 1 of 5 </span> Please enter your postcode:
+        </h2>
+        <div class="form-group form-group-textarea">
+          <label for="postcode">Postcode:</label>
+          <input type="text" id="postcode" name="postcode" spellcheck="false" required>
+          <p id="postcodeError" style="color: red;"></p> <!-- Error message container -->
+        </div>
+        <h2 class="survey__panel__question">
+          <span class="visuallyhidden">Question 1.5 of 5 </span> <br> What do you identify as? :
         </h2>
         <div class="survey__panel__period">
           <div class="form-group">
@@ -59,7 +54,7 @@
           </div>
           <div class="form-group">
             <input id="other1" type="radio" name="question_1" value="other1" />
-            <label for="other">Other</label>
+            <label for="other1">Other</label>
           </div>
           <div class="form-group">
             <input id="prefernottoanswer1" type="radio" name="question_1" value="Null" />
@@ -73,6 +68,7 @@
         <h2 class="survey__panel__question">
           <span class="visuallyhidden">Question 2 of 5 </span> What is your income (CAD) ?
         </h2>
+
         <div class="survey__panel__satisfaction">
           <div class="form-group">
             <input id="lessthan55" type="radio" class="radiobox" name="question_2" value="lessthan55" />
@@ -94,32 +90,61 @@
         <p class="error-message"></p>
       </section>
 
-      <section class="survey__panel" aria-hidden="true" data-index="3" data-panel="thirdPanel" data-requirement="checkbox">
+      <section class="survey__panel" aria-hidden="true" data-index="3" data-panel="thirdPanel" data-requirement="option">
         <h2 class="survey__panel__question">
-          <span class="visuallyhidden">Question 3 of 5 </span>How did you hear about our company?
+          <span class="visuallyhidden">Question 3.1 of 5 </span> How important is climate change to you?
         </h2>
-        <div class="survey__panel__hearabout">
-          <div class="form-group">
-            <input type="checkbox" class="checkbox" id="searchengine" name="question_3" value="Search Engine" />
-            <label for="searchengine">Search Engine</label>
+        <div class="survey__panel__likert">
+          <div class="slidecontainer">
+            <input type="range" min="1" max="5" value="3" class="slider" id="climatechange">
           </div>
-          <div class="form-group">
-            <input type="checkbox" class="checkbox" id="friend" name="question_3" value="A friend of mine" />
-            <label for="friend">A friend of mine</label>
-          </div>
-          <div class="form-group">
-            <input type="checkbox" class="checkbox" id="socialmedia" name="question_3" value="Social Media" />
-            <label for="socialmedia">Social Media</label>
-          </div>
-          <div class="form-group">
-            <input type="checkbox" class="checkbox" id="other" name="question_3" value="Other" />
-            <label for="other">Other</label>
+          <div class="likert-scale-labels">
+            <span class="likert-scale-label">Least Important</span>
+            <span class="likert-scale-label">Most Important</span>
           </div>
         </div>
+          <h2 class="survey__panel__question">
+            <span class="visuallyhidden">Question 3.2 of 5 </span> How important are indigenous rights to you?
+          </h2>
+          <div class="survey__panel__likert">
+            <div class="slidecontainer">
+              <input type="range" min="1" max="5" value="3" class="slider" id="indigenousrights">
+            </div>
+            <div class="likert-scale-labels">
+              <span class="likert-scale-label">Least Important</span>
+              <span class="likert-scale-label">Most Important</span>
+            </div>
+          </div>
+            <h2 class="survey__panel__question">
+              <span class="visuallyhidden">Question 3.3 of 5 </span> How important are LGBTQ+ rights to you?
+            </h2>
+            <div class="survey__panel__likert">
+              <div class="slidecontainer">
+                <input type="range" min="1" max="5" value="3" class="slider" id="lgbtqrights">
+              </div>
+              <div class="likert-scale-labels">
+                <span class="likert-scale-label">Least Important</span>
+                <span class="likert-scale-label">Most Important</span>
+              </div>
+            </div>
+              <h2 class="survey__panel__question">
+                <span class="visuallyhidden">Question 3.4 of 5 </span> How much do you support more immigration in Canada?
+              </h2>
+              <div class="survey__panel__likert">
+                <div class="slidecontainer">
+                  <input type="range" min="1" max="5" value="3" class="slider" id="immigration">
+                </div>
+                <div class="likert-scale-labels">
+                  <span class="likert-scale-label">Very Little </span>
+                  <span class="likert-scale-label">Very Much </span>
+                </div>
+              </div>
         <p class="error-message"></p>
       </section>
 
-      <section class="survey__panel" aria-hidden="true" data-index="4" data-panel="fourthPanel" data-requirement="option">
+
+
+      <section class="survey__panel" aria-hidden="true" data-index="4" data-panel="fourthPanel" data-requirement="False">
         <h2 class="survey__panel__question">
           <span class="visuallyhidden">Question 4 of 5 </span>Would you recommend our product to your friends?
         </h2>

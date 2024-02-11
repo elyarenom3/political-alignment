@@ -7,9 +7,9 @@
 :root {
   --darkBlue: #ffffff;
   --lightGreen: #a7e9af;
-  --whiteClr: #9ec4d5;
-  --lightBlue: rgb(0, 127, 164);
-  --intenseBlue: #46b3e6;
+  --whiteClr: #35383b;
+  --lightBlue: rgb(63, 233, 223);
+  --intenseBlue: #00aeff;
 }
 
 :focus {
@@ -485,4 +485,60 @@ button[disabled] {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 90%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #5e6469; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #3fe9df; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #0d46d0; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+/* Style for the container holding the Likert scale labels */
+.likert-scale-labels {
+  display: flex;
+  justify-content: space-between; /* This spreads out the children to start and end of the container */
+}
+
+/* Style for individual labels */
+.likert-scale-label {
+  display: inline-block;
+  /* Add any other styling here, such as font size, color, etc. */
+}
+
+/* Style for the slider container to ensure it aligns with your labels */
+.slidecontainer {
+  margin-bottom: 10px; /* Adjust as needed to provide space between the slider and labels */
 }
