@@ -28,11 +28,11 @@ document.getElementById('politician').textContent = politicianName;
 
 // Define the base rates
 var indigenousRightsRate = 85; // Example percentage
-var lgbtqRate = 85; // Example percentage
+var lgbtqRate = 65; // Example percentage
 var immigrationRate = 70; // Example percentage
-var fiscalRate = 75; // Example percentage
-var housingAffordability = 70
-var healthcare = 36
+var fiscalRate = 55; // Example percentage
+var housingAffordability = 60
+var healthcare = 76
 var dataPrivacy = 50
 
 // Calculate minimum and maximum multipliers
