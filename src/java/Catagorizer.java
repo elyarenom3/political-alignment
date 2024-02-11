@@ -106,7 +106,7 @@ public class Catagorizer {
         String[] Buzzwords = {"sexual orientation", "gender", "lgbt", "twin spirit"};
         String[] Pro= {"rights", "discrimination", "based","the" };
         String [] Anti ={"religion", "christian" };
-        String Name = "LGBTQ";
+        String Name = "LGBT";
         Issue(filepath, Buzzwords, Pro, Anti, Name);
     }
 

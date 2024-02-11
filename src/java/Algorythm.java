@@ -181,10 +181,7 @@ public class Algorythm {
         for(int i=0; i<7; i++){
             num=num+Issuemath(i);
         }
-        for(int i=0; i<7; i++){
-            dem=dem+(Importance[i]/totali * Effects[i]/totali);
-        }
-        return num/dem;
+        return num;
     }
 
 

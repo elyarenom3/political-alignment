@@ -4,11 +4,15 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.Reader;
+import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 public class Main {
     public static void main(String[] args){
-        Algorythm test =new Algorythm("H2X2G1","/Users/alexmiller/HackStuff/","DataSet copy.csv");
+        String postal ="H2W 1L4";
+        WebScraper.scrapeMemberInfo(WebScraper.buildSearchUrl(postal));
+        System.out.println(WebScraper.accessWebsite(WebScraper.buildSearchUrl(postal)));
+        Algorythm test =new Algorythm(postal,"/Users/alexmiller/HackStuff/","DataSet copy.csv");
         test.addDemo("Income", 2);
         test.addDemo("Groups", 1);
         test.addDemo("Gender", 0);

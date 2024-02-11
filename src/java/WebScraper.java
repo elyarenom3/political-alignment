@@ -78,4 +78,24 @@ public class WebScraper {
             return "Error Somewhere";
         }
     }
+
+    public static void scrapeMemberInfo(String url) {
+        try {
+            // Fetch the document over HTTP
+            Document doc = Jsoup.connect(url).get();
+
+            // Select the elements containing the name, party affiliation, and image URL
+            String name = doc.select("element-selector-for-name").first().text();
+            String partyAffiliation = doc.select("element-selector-for-party-affiliation").first().text();
+            String imageUrl = doc.select("element-selector-for-image").first().attr("src");
+
+            // Output the data
+            System.out.println("Name: " + name);
+            System.out.println("Party Affiliation: " + partyAffiliation);
+            System.out.println("Image URL: " + imageUrl);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
