@@ -45,7 +45,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.XMLParser">
+  <component name="RunManager" selected="Application.Catagorizer">
     <configuration name="CSVtoHashMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CSVtoHashMap" />
       <module name="political-alignment" />
@@ -53,15 +53,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="Catagorizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Catagorizer" />
       <module name="political-alignment" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WebScraper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="WebScraper" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="political-alignment" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -83,11 +83,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.XMLParser" />
+        <item itemvalue="Application.Catagorizer" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.CSVtoHashMap" />
         <item itemvalue="Application.XmlDownloader" />
-        <item itemvalue="Application.WebScraper" />
+        <item itemvalue="Application.XMLParser" />
+        <item itemvalue="Application.CSVtoHashMap" />
       </list>
     </recent_temporary>
   </component>
@@ -100,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1707587231822</updated>
       <workItem from="1707587238541" duration="4595000" />
-      <workItem from="1707595450668" duration="12758000" />
+      <workItem from="1707595450668" duration="28791000" />
     </task>
     <servers />
   </component>

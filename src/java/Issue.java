@@ -1,8 +1,8 @@
 public abstract class Issue {
 
-     int Importance;
-     int Effect;
-     int Score;
+     public int Importance;
+     public int Effect;
+     public int Score;
 
     public int getEffect() {
         return Effect;
