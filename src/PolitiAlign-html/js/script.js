@@ -170,7 +170,7 @@ function Survey(survey) {
     }
   }
 
-  function checkAge(age) {
+ function checkAge(age) {
     if (age.value === "") {
       showError(age, `${getName(age)} is required`);
       return;
@@ -283,12 +283,32 @@ function Survey(survey) {
     if (!dontSubmit) {
       e.preventDefault();
     } else {
+      const surveyData = {
+        postcode: document.getElementById('postcode').value,
+        gender: document.querySelector('input[name="question_1"]:checked')?.value,
+        income: document.querySelector('input[name="question_2"]:checked')?.value,
+        groups: Array.from(document.querySelectorAll('input[name="question_3"]:checked')).map(el => el.value),
+        fiscalImportance: document.querySelector('input[name="question_4"]:checked')?.value,
+        recommendation: document.getElementById('recommendation').value,
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        country: document.getElementById('dropdown').value,
+        age: document.getElementById('number').value,
+        lgbtqRightsImportance: document.getElementById('lgbtq').value,
+        indigenousRightsImportance: document.getElementById('indigenousrights').value,
+        immigrationSupportLevel: document.getElementById('immigration').value,
+        housingAffordabilityPriority: document.getElementById('housingaffordibility').value,
+        healthcareFundingPriority: document.getElementById('healthcare').value,
+        dataPrivacyPriority: document.getElementById('dataprivacy').value
+      };
+      localStorage.setItem('surveyData', JSON.stringify(surveyData));
       mainElement.classList.add("submission");
       mainElement.setAttribute("role", "alert");
       mainElement.innerHTML = `<svg width="126" height="118" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 118" aria-hidden="true" style="transform: translateX(50%)"><path d="M52.5 118c28.995 0 52.5-23.729 52.5-53S81.495 12 52.5 12 0 35.729 0 65s23.505 53 52.5 53z" fill="#B9CCED"/><path d="M45.726 87L23 56.877l8.186-6.105 15.647 20.74L118.766 0 126 7.192 45.726 87z" fill="#A7E9AF"/></svg>
       <h2 class="submission">Perfect!</h2>
+      
       <p>The form was successfully submitted</p>
-     <button onclick="window.location.href='index.html';" class="button return-button">See Results</button>`;
+     <button onclick="window.location.href='results.html';" class="button return-button">See Results</button>`;
 
       return false;
     }

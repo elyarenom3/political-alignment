@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title> Results </title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<div class="hero_area">
+
+    <div class="hero_bg_box">
+        <div class="bg_img_box">
+            <img src="images/hero-bg.png" alt="">
+        </div>
+    </div>
+
+
+
+    <!-- header section strats -->
+    <header class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <a class="navbar-brand" href="index.html">
+            <span>
+              PolitiAlign Canada
+            </span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class=""> </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav  ">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html"> About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="survey.html">Survey</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="team.html">Team</a>
+                        </li>
+                        <form class="form-inline">
+                            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- end header section -->
+
+    <div id="surveyResults">style="color: white;"</div>
+    const postcode = surveyResults.postcode;
+    const indigenousRightsRating = surveyResults.indigenousrights;
+
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+                var data = google.visualization.arrayToDataTable([
+                    ['Crash Type', '2014'],
+                    ['Single Vehicle',     ,
+                    ['Involving Large Truck',      300],
+                    ['Involving Speeding',  991],
+                    ['Involving Rollover', 692],
+                    ['Involving Roadway Departure',    1368],
+                    ['Involving Intersection',    802]
+                ]);
+
+                var options = {
+                    pieSliceText: 'Single Vehicle',
+                    slices: {  0: {color: '#f7b15b', offset: 0.2},
+                        1: {color: '#ffca71'},
+                        2: {color: '#be7f29'},
+                        3: {color: '#9f6407'},
+                        4: {color: '#7c4600'},
+                        5: {color: '#5d2d00'},
+                    },
+
+                    backgroundColor: '#f9f9fb',
+                    chartArea: {left:0, top:20, width:'100%', height:'90%'},
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                chart.draw(data, options);
+            }
+
+        </script>
+        <style>
+            #piechart {
+                min-height:300px;
+            }
+        </style>
+    </head>
+
+    <div align="center">
+        <p>California Fatalities by Crash Type</p>
+        <div id="piechart"></div>
+        <p><small>Source: National Highway Traffic Safety Administration, 2014</small></p>
+    </div>
+
+<!-- jQery -->
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<!-- popper js -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<!-- bootstrap js -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!-- owl slider -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+</script>
+<!-- custom js -->
+<script type="text/javascript" src="js/custom.js"></script>
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+</script>
+<!-- End Google Map -->
+    <script src="js/logic.js"></script>
+</body>
+
+</html>

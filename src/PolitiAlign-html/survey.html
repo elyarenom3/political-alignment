@@ -54,15 +54,15 @@
             <label for="male">Male</label>
           </div>
           <div class="form-group">
-            <input id="NonBinary" type="radio" name="question_1" value="NonBinary" />
+            <input id="NonBinary" type="radio" name="question_1" value="nonbinary" />
             <label for="NonBinary">Non-Binary</label>
           </div>
           <div class="form-group">
-            <input id="other1" type="radio" name="question_1" value="other1" />
+            <input id="other1" type="radio" name="question_1" value="genderother" />
             <label for="other1">Other</label>
           </div>
           <div class="form-group">
-            <input id="prefernottoanswer1" type="radio" name="question_1" value="Null" />
+            <input id="prefernottoanswer1" type="radio" name="question_1" value="null" />
             <label for="prefernottoanswer1">Prefer not to answer</label>
           </div>
         </div>
@@ -76,8 +76,8 @@
 
         <div class="survey__panel__satisfaction">
           <div class="form-group">
-            <input id="lessthan55" type="radio" class="radiobox" name="question_2" value="lessthan55" />
-            <label for="lessthan55"> Less than 40k a year </label>
+            <input id="lessthan40" type="radio" class="radiobox" name="question_2" value="lessthan40" />
+            <label for="lessthan40"> Less than 40k a year </label>
           </div>
           <div class="form-group">
             <input id="40to100" type="radio" class="radiobox" name="question_2" value="40to100" />
@@ -88,7 +88,7 @@
             <label for="over100"> over 100k per year </label>
           </div>
           <div class="form-group">
-            <input id="prefernottoanswer2" type="radio" class="radiobox" name="question_2" value="Null" />
+            <input id="prefernottoanswer2" type="radio" class="radiobox" name="question_2" value="null" />
             <label for="prefernottoanswer2"> Prefer not to answer </label>
           </div>
         </div>
@@ -97,24 +97,24 @@
 
       <section class="survey__panel" aria-hidden="true" data-index="3" data-panel="thirdPanel" data-requirement="checkbox">
         <h2 class="survey__panel__question">
-          <span class="visuallyhidden">Question 3 of 5 </span> Do you identify as part of any of these groups?
+          <span class="visuallyhidden">Question 3 of 5 </span> Do you identify as a part of any of these groups?
         </h2>
         <div class="survey__panel__hearabout">
           <div class="form-group">
-            <input type="checkbox" class="checkbox" id="searchengine" name="question_3" value="Search Engine" />
-            <label for="searchengine">LGBTQ+ community</label>
+            <input type="checkbox" class="checkbox" id="lgbtqmember" name="question_3" value="lgbtqmember" />
+            <label for="lgbtqmember">LGBTQ+ community</label>
           </div>
           <div class="form-group">
-            <input type="checkbox" class="checkbox" id="friend" name="question_3" value="A friend of mine" />
-            <label for="friend">Indigenous</label>
+            <input type="checkbox" class="checkbox" id="indigenous" name="question_3" value="indigenous" />
+            <label for="indigenous">Indigenous</label>
           </div>
           <div class="form-group">
-            <input type="checkbox" class="checkbox" id="socialmedia" name="question_3" value="Social Media" />
-            <label for="socialmedia"> Non-white </label>
+            <input type="checkbox" class="checkbox" id="nonwhite" name="question_3" value="nonwhite" />
+            <label for="nonwhite"> Non-white </label>
           </div>
           <div class="form-group">
-            <input type="checkbox" class="checkbox" id="socialmedia1" name="question_3" value="Social" />
-            <label for="socialmedia1"> None of these </label>
+            <input type="checkbox" class="checkbox" id="noneofthese" name="question_3" value="null" />
+            <label for="noneofthese"> None of these </label>
           </div>
         </div>
         <br>
@@ -170,8 +170,8 @@
             <label for="norecomment">No</label>
           </div>
           <div class="form-group">
-            <input type="radio" class="radiobox" name="question_4" id="mayberecommend" value="maybe" />
-            <label for="mayberecommend">Maybe</label>
+            <input type="radio" class="radiobox" name="question_4" id="mayberecommend" value="somewhat" />
+            <label for="mayberecommend">Somewhat</label>
           </div>
           <div class="form-group">
             <input type="radio" class="radiobox" name="question_4" id="yesrecommend" value="yes" />
@@ -223,7 +223,7 @@
 
       <section class="survey__panel" aria-hidden="true" data-index="5" data-panel="fifthPanel" data-requirement="name;email;country;age">
         <h2 class="survey__panel__question">
-          <span class="visuallyhidden">Question 5 of 5 </span>Please fill your details so we can send you the results of the survey
+          <span class="visuallyhidden">Question 5 of 5 </span> Please fill your details so we can send you the results of the survey
         </h2>
         <div class="survey__panel__personaldetails">
           <div class="form-group">
@@ -487,7 +487,7 @@
             <p class="error-message"></p>
           </div>
           <div class="form-group">
-            <label for="number" id="number-label" class="age">Age</label>
+          <label for="number" id="number-label" class="age">Age</label>
             <input type="number" id="number" name="age" min="0" max="150" required placeholder="Age" />
             <p class="error-message"></p>
           </div>
@@ -507,8 +507,6 @@
   </main>
 </div>
 
-<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
-<!-- partial -->
   <script  src="js/script.js"></script>
 </body>
 </html>
