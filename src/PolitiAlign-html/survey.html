@@ -32,12 +32,12 @@
           <span class="visuallyhidden">Question 1 of 5 </span> Please enter your postcode:
         </h2>
         <div class="form-group form-group-textarea">
-          <label for="postcode">Postcode:</label>
+          <label for="postcode"></label>
           <input type="text" id="postcode" name="postcode" spellcheck="false" required>
           <p id="postcodeError" style="color: red;"></p> <!-- Error message container -->
         </div>
         <h2 class="survey__panel__question">
-          <span class="visuallyhidden">Question 1.5 of 5 </span> <br> What do you identify as? :
+          <span class="visuallyhidden">Question 1.5 of 5 </span> <br> What gender do you identify as? :
         </h2>
         <div class="survey__panel__period">
           <div class="form-group">
@@ -90,57 +90,68 @@
         <p class="error-message"></p>
       </section>
 
-      <section class="survey__panel" aria-hidden="true" data-index="3" data-panel="thirdPanel" data-requirement="option">
+      <section class="survey__panel" aria-hidden="true" data-index="3" data-panel="thirdPanel" data-requirement="checkbox">
         <h2 class="survey__panel__question">
-          <span class="visuallyhidden">Question 3.1 of 5 </span> How important is climate change to you?
+          <span class="visuallyhidden">Question 3 of 5 </span> Do you identify as part of any of these groups?
+        </h2>
+        <div class="survey__panel__hearabout">
+          <div class="form-group">
+            <input type="checkbox" class="checkbox" id="searchengine" name="question_3" value="Search Engine" />
+            <label for="searchengine">LGBTQ+ community</label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="checkbox" id="friend" name="question_3" value="A friend of mine" />
+            <label for="friend">Indigenous</label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="checkbox" id="socialmedia" name="question_3" value="Social Media" />
+            <label for="socialmedia"> Non-white </label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="checkbox" id="socialmedia1" name="question_3" value="Social" />
+            <label for="socialmedia1"> None of these </label>
+          </div>
+        </div>
+        <br>
+        <h2 class="survey__panel__question">
+          <span class="visuallyhidden">Question 3.1 of 5 </span> How important are LGBTQ+ rights to you?
         </h2>
         <div class="survey__panel__likert">
           <div class="slidecontainer">
-            <input type="range" min="1" max="5" value="3" class="slider" id="climatechange">
+            <input type="range" min="1" max="5" value="3" class="slider" id="lgbtq">
           </div>
           <div class="likert-scale-labels">
             <span class="likert-scale-label">Least Important</span>
             <span class="likert-scale-label">Most Important</span>
           </div>
         </div>
-          <h2 class="survey__panel__question">
-            <span class="visuallyhidden">Question 3.2 of 5 </span> How important are indigenous rights to you?
-          </h2>
-          <div class="survey__panel__likert">
-            <div class="slidecontainer">
-              <input type="range" min="1" max="5" value="3" class="slider" id="indigenousrights">
-            </div>
-            <div class="likert-scale-labels">
-              <span class="likert-scale-label">Least Important</span>
-              <span class="likert-scale-label">Most Important</span>
-            </div>
+        <h2 class="survey__panel__question">
+          <span class="visuallyhidden">Question 3.2 of 5 </span> How important are indigenous rights to you?
+        </h2>
+        <div class="survey__panel__likert">
+          <div class="slidecontainer">
+            <input type="range" min="1" max="5" value="3" class="slider" id="indigenousrights">
           </div>
-            <h2 class="survey__panel__question">
-              <span class="visuallyhidden">Question 3.3 of 5 </span> How important are LGBTQ+ rights to you?
-            </h2>
-            <div class="survey__panel__likert">
-              <div class="slidecontainer">
-                <input type="range" min="1" max="5" value="3" class="slider" id="lgbtqrights">
-              </div>
-              <div class="likert-scale-labels">
-                <span class="likert-scale-label">Least Important</span>
-                <span class="likert-scale-label">Most Important</span>
-              </div>
-            </div>
-              <h2 class="survey__panel__question">
-                <span class="visuallyhidden">Question 3.4 of 5 </span> How much do you support more immigration in Canada?
-              </h2>
-              <div class="survey__panel__likert">
-                <div class="slidecontainer">
-                  <input type="range" min="1" max="5" value="3" class="slider" id="immigration">
-                </div>
-                <div class="likert-scale-labels">
-                  <span class="likert-scale-label">Very Little </span>
-                  <span class="likert-scale-label">Very Much </span>
-                </div>
-              </div>
+          <div class="likert-scale-labels">
+            <span class="likert-scale-label">Least Important</span>
+            <span class="likert-scale-label">Most Important</span>
+          </div>
+        </div>
+        <h2 class="survey__panel__question">
+          <span class="visuallyhidden">Question 3.4 of 5 </span> How much do you support more immigration in Canada?
+        </h2>
+        <div class="survey__panel__likert">
+          <div class="slidecontainer">
+            <input type="range" min="1" max="5" value="3" class="slider" id="immigration">
+          </div>
+          <div class="likert-scale-labels">
+            <span class="likert-scale-label">Not At All </span>
+            <span class="likert-scale-label">Very Much </span>
+          </div>
+        </div>
         <p class="error-message"></p>
       </section>
+
 
 
 
