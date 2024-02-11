@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b3514ba-43a4-4e5a-acc6-dbdf42d0caa5" name="Changes" comment="" />
+    <list default="true" id="9b5325c8-1ee9-4d39-985e-4bfaa30f7c92" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/PolitiAlign-html/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/PolitiAlign-html/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolitiAlign-html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/PolitiAlign-html/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolitiAlign-html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/PolitiAlign-html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolitiAlign-html/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/PolitiAlign-html/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolitiAlign-html/survey.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/PolitiAlign-html/survey.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolitiAlign-html/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/PolitiAlign-html/team.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -23,28 +30,31 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2cBa499vhXS0sTUpkgOf4JDzPxo" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2cBdeVhqMXCMMmqdQhqGip91Sbg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/alexmiller/Documents/GitHub/political-alignment",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/adminelya/Documents/GitHub/political-alignment",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.Catagorizer">
     <configuration name="CSVtoHashMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CSVtoHashMap" />
@@ -90,17 +100,30 @@
         <item itemvalue="Application.CSVtoHashMap" />
       </list>
     </recent_temporary>
+=======
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-2f79fb23" />
+      </set>
+    </attachedChunks>
+>>>>>>> 747faf47406099a560a1ec00fa597b34fe45b383
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1b3514ba-43a4-4e5a-acc6-dbdf42d0caa5" name="Changes" comment="" />
-      <created>1707587231822</created>
+      <changelist id="9b5325c8-1ee9-4d39-985e-4bfaa30f7c92" name="Changes" comment="" />
+      <created>1707589000876</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1707587231822</updated>
       <workItem from="1707587238541" duration="4595000" />
       <workItem from="1707595450668" duration="28791000" />
+=======
+      <updated>1707589000876</updated>
+      <workItem from="1707589002171" duration="27866000" />
+>>>>>>> 747faf47406099a560a1ec00fa597b34fe45b383
     </task>
     <servers />
   </component>

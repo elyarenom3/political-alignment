@@ -449,7 +449,7 @@ label {
 }
 
 .button {
-  --btnClr: #5f6caf;
+  --btnClr: #3fe9df;
   display: inline-block;
   padding: 10px 25px;
   background-color: var(--btnClr);

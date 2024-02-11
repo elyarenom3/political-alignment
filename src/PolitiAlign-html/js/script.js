@@ -17,19 +17,22 @@ function Survey(survey) {
   const question5Age = document.querySelector("[name='age']");
   const allPanels = Array.from(survey.querySelectorAll(".survey__panel"));
   let progressbarStep = Array.from(
-    progressbar.querySelectorAll(".progressbar__step ")
+      progressbar.querySelectorAll(".progressbar__step ")
   );
   const mainElement = document.querySelector("main");
   const nextButton = survey.querySelector("[name='next']");
   const prevButton = survey.querySelector("[name='prev']");
   const submitButton = survey.querySelector("[name='submit']");
   let currentPanel = Array.from(surveyPanels).filter((panel) =>
-    panel.classList.contains("survey__panel--current")
+      panel.classList.contains("survey__panel--current")
   )[0];
   const formData = {};
   const options = {
     question1Radios,
     question2Radios,
+    question3CheckBoxes,
+    question4Radios,
+    question4Textarea,
     question5Name,
     question5Email,
     question5Country,
@@ -37,6 +40,17 @@ function Survey(survey) {
   };
   let dontSubmit = false;
 
+  document.getElementById('postcode').addEventListener('input', function() {
+    var postcode = document.getElementById('postcode').value;
+    var regex = /^[A-Z]\d[A-Z]\s?\d[A-Z]\d$/i; // Case-insensitive (i flag)
+    var errorMsg = document.getElementById('postcodeError');
+
+    if (regex.test(postcode)) {
+      errorMsg.textContent = ''; // Clear error message if postcode is valid
+    } else {
+      errorMsg.textContent = 'Invalid postcode. Please enter a valid Canadian postcode'; // Show error message
+    }
+  });
   function storeInitialData() {
     allPanels.map((panel) => {
       let index = panel.dataset.index;
@@ -50,20 +64,6 @@ function Survey(survey) {
       };
     });
   }
-
-
-  document.getElementById('postcode').addEventListener('input', function() {
-    var postcode = document.getElementById('postcode').value;
-    var regex = /^[A-Z]\d[A-Z]\s?\d[A-Z]\d$/i; // Case-insensitive (i flag)
-    var errorMsg = document.getElementById('postcodeError');
-
-    if (regex.test(postcode)) {
-      errorMsg.textContent = ''; // Clear error message if postcode is valid
-    } else {
-      errorMsg.textContent = 'Invalid postcode. Please enter a valid Canadian postcode'; // Show error message
-    }
-  });
-
 
   function updateProgressbar() {
     let index = currentPanel.dataset.index;
@@ -85,7 +85,7 @@ function Survey(survey) {
       }
       if (formData[index]["answer"][`${name}`].includes(value)) {
         const position = formData[index]["answer"][`${name}`].findIndex(
-          (elem) => elem === value
+            (elem) => elem === value
         );
         formData[index]["answer"][`${name}`].splice(position, 1);
       } else {
@@ -155,8 +155,7 @@ function Survey(survey) {
   }
 
   function checkRequired(input) {
-    const index = currentPanel.dataset.index;
-    if (input.value.trim() === "" && +index !== 3) {
+    if (input.value.trim() === "") {
       showError(input, `${getName(input)} is required`);
     } else {
       noErrors(input);
@@ -205,8 +204,8 @@ function Survey(survey) {
       if (arr.includes("country")) checkSelection(question5Country);
       if (arr.includes("age")) checkAge(question5Age);
       if (
-        arr.length === 4 &&
-        arr.every((elem) => formData[index].answer.hasOwnProperty(elem))
+          arr.length === 4 &&
+          arr.every((elem) => formData[index].answer.hasOwnProperty(elem))
       ) {
         survey.classList.remove("form-error");
         dontSubmit = true;
@@ -287,8 +286,10 @@ function Survey(survey) {
       mainElement.classList.add("submission");
       mainElement.setAttribute("role", "alert");
       mainElement.innerHTML = `<svg width="126" height="118" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 118" aria-hidden="true" style="transform: translateX(50%)"><path d="M52.5 118c28.995 0 52.5-23.729 52.5-53S81.495 12 52.5 12 0 35.729 0 65s23.505 53 52.5 53z" fill="#B9CCED"/><path d="M45.726 87L23 56.877l8.186-6.105 15.647 20.74L118.766 0 126 7.192 45.726 87z" fill="#A7E9AF"/></svg>
-      <h2 class="submission">Thanks for your time</h2>
-      <p>The form was successfully submitted`;
+      <h2 class="submission">Perfect!</h2>
+      <p>The form was successfully submitted</p>
+     <button onclick="window.location.href='index.html';" class="button return-button">See Results</button>`;
+
       return false;
     }
   }
@@ -297,23 +298,23 @@ function Survey(survey) {
 
   // Add event listeners
   function addListenersTo({
-    question1Radios,
-    question2Radios,
-    question3CheckBoxes,
-    question4Radios,
-    ...inputs
-  }) {
+                            question1Radios,
+                            question2Radios,
+                            question3CheckBoxes,
+                            question4Radios,
+                            ...inputs
+                          }) {
     question1Radios.forEach((elem) =>
-      elem.addEventListener("change", updateFormData)
+        elem.addEventListener("change", updateFormData)
     );
     question2Radios.forEach((elem) =>
-      elem.addEventListener("change", updateFormData)
+        elem.addEventListener("change", updateFormData)
     );
     question3CheckBoxes.forEach((elem) =>
-      elem.addEventListener("change", updateFormData)
+        elem.addEventListener("change", updateFormData)
     );
     question4Radios.forEach((elem) =>
-      elem.addEventListener("change", updateFormData)
+        elem.addEventListener("change", updateFormData)
     );
     let {
       question4Textarea,
