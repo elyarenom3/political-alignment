@@ -8,13 +8,22 @@ import java.util.HashMap;
 import java.util.Map;
 public class Main {
     public static void main(String[] args){
-        String filelocation = "/Users/alexmiller/HackStuff/";
-        String csvlocation = WebScraper.alltogether("H2X2G1", filelocation);
-        Map<String, String> csvData = CSVtoHashMap.getVotes(csvlocation, "Bill Number", "Vote");
-        //for(String k: csvData.keySet())
-        for(String k: csvData.keySet()) {
-            XmlDownloader.download(k, filelocation);
+        Algorythm test =new Algorythm("H2X2G1","/Users/alexmiller/HackStuff/","DataSet copy.csv");
+        test.addDemo("Income", 2);
+        test.addDemo("Groups", 1);
+        test.addDemo("Gender", 0);
+        test.addImportance("Immigration", 5);
+        test.addImportance("Finances", 4);
+        test.addImportance("Housisng", 3);
+        test.addImportance("LGBT", 4);
+        test.addImportance("First Nations Rights", 4);
+        for(int k: test.Importance){
+            System.out.println(k);
         }
-        CSVFileMaker.writeBillsToCSV(csvData, filelocation);
+        for(int k: test.Effects){
+            System.out.println(k);
+        }
+        System.out.println(test.TOTALSCORE());
+
     }
 }

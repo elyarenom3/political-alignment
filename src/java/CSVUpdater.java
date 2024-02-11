@@ -6,56 +6,46 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CSVUpdater {
 
     public static void updateCSVWithNewData(String filePath, Map<String, Float> newBillData, String newColumnName) {
-        // Temporary storage for the merged data
-        Map<String, List<String>> mergedData = new HashMap<>();
+        // LinkedHashMap to preserve the insertion order
+        Map<String, List<String>> dataWithNewColumn = new LinkedHashMap<>();
         List<String> headers = new ArrayList<>();
 
-        // Read existing CSV and merge with new data
+        // Read the existing CSV file
         try (Reader reader = Files.newBufferedReader(Paths.get(filePath))) {
-            CSVFormat format = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(reader);
-            headers.addAll(format.getHeaderNames()); // Get existing headers
-            if (!headers.contains(newColumnName)) {
-                headers.add(newColumnName); // Add new column name if not already present
-            }
+            Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(reader);
+            headers.addAll(records.iterator().next().toMap().keySet()); // Copy existing headers
+            headers.add(newColumnName); // Add the new column header
 
-            for (CSVRecord record : format) {
-                String billName = record.get("Bill Name");
-                List<String> rowValues = new ArrayList<>();
-                for (String header : format.getHeaderNames()) {
-                    rowValues.add(record.get(header));
-                }
-                // Add new value or empty string if not present
-                Float newValue = newBillData.getOrDefault(billName, null);
-                if (headers.indexOf(newColumnName) >= rowValues.size()) {
-                    rowValues.add(newValue != null ? newValue.toString() : "");
-                } else {
-                    rowValues.set(headers.indexOf(newColumnName), newValue != null ? newValue.toString() : "");
-                }
-                mergedData.put(billName, rowValues);
+            // Read each record and add the new column data
+            for (CSVRecord record : records) {
+                List<String> rowValues = new ArrayList<>(record.size() + 1);
+                record.forEach(rowValues::add); // Add existing row values
+                String key = record.get(0); // Assuming the first column contains a unique identifier
+                // Add the new column value
+                Float newValue = newBillData.getOrDefault(key, null);
+                rowValues.add(newValue != null ? newValue.toString() : "N/A"); // Use "N/A" for missing data
+                dataWithNewColumn.put(key, rowValues);
             }
         } catch (IOException e) {
             e.printStackTrace();
             return;
         }
 
-        // Write the merged data back to the CSV, including the new column
+        // Write the data with the new column back to the CSV file
         try (
                 BufferedWriter writer = Files.newBufferedWriter(Paths.get(filePath));
                 CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader(headers.toArray(new String[0])))
         ) {
-            for (Map.Entry<String, List<String>> entry : mergedData.entrySet()) {
-                csvPrinter.printRecord(entry.getValue());
+            for (List<String> rowValues : dataWithNewColumn.values()) {
+                csvPrinter.printRecord(rowValues);
             }
             csvPrinter.flush();
-            System.out.println("CSV file updated successfully.");
+            System.out.println("CSV file updated with new column.");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -66,6 +56,6 @@ public class CSVUpdater {
         newBillData.put("Bill A", 123.45f); // Example data
         newBillData.put("Bill B", 67.89f); // Assuming these bills exist in your CSV
 
-        //updateCSVWithNewData(filePath, newBillData, "New Column Name");
+        updateCSVWithNewData(filePath, newBillData, "New Column Name");
     }
 }
