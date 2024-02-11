@@ -10,11 +10,16 @@ import java.util.Map;
 public class Main {
 
     public static void main(String[] args){
-        String postal ="H2W 1L4";
+        String postal ="N0R 3M9";
         WebScraper.scrapeMemberInfo(WebScraper.accessWebsite(WebScraper.buildSearchUrl(postal)));
         System.out.println(WebScraper.accessWebsite(WebScraper.buildSearchUrl(postal)));
         Algorythm test =new Algorythm(postal,"/Users/alexmiller/HackStuff/","DataSet copy.csv");
-        HashMap<String, String> votres = new HashMap<>();
+        HashMap<String, String> votes = (HashMap<String, String>) test.getVotes();
+        for(String s: votes.keySet()){
+            System.out.println(s + votes.get(s));
+        }
+
+
         test.addDemo("Income", 2);
         test.addDemo("Groups", 1);
         test.addDemo("Gender", 0);

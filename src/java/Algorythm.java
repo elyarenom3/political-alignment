@@ -28,6 +28,10 @@ public class Algorythm {
         this.votes = CSVtoHashMap.getVotes(votecsvlocation, "Bill Number", "Vote");
     }
 
+    public Map<String, String> getVotes() {
+        return votes;
+    }
+
     public void addDemo (String type, int score){
         switch(type){
             case "Gender":
@@ -148,16 +152,13 @@ public class Algorythm {
         float n=0;
         float score = 0;
         for (String r : floats.keySet()) {
-            if (votes.get(r) != null) {
-                switch (votes.get(r)) {
-                    case ("Yea"):
-                        sum = sum + floats.get(r);
-                        n++;
-                    case ("Nay"):
-                        sum = sum - floats.get(r);
-                        n++;
-
+            if (votes.get(r) != null ) {
+                if(votes.get(r).toLowerCase().equals("paired")){
+                    if(votes.get(r).toLowerCase().equals("yea")){sum = sum + floats.get(r);
+                        n++;}
                 }
+
+
             }
 
 
