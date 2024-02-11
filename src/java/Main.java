@@ -10,10 +10,11 @@ public class Main {
     public static void main(String[] args){
         String filelocation = "/Users/alexmiller/HackStuff/";
         String csvlocation = WebScraper.alltogether("H2X2G1", filelocation);
-        Map<String, String> csvData = CSVtoHashMap.getVotes(csvlocation);
-        for(String k: csvData.keySet()){
+        Map<String, String> csvData = CSVtoHashMap.getVotes(csvlocation, "Bill Number", "Vote");
+        //for(String k: csvData.keySet())
+        for(String k: csvData.keySet()) {
             XmlDownloader.download(k, filelocation);
         }
-        for
+        CSVFileMaker.writeBillsToCSV(csvData, filelocation);
     }
 }
