@@ -162,7 +162,7 @@
 
       <section class="survey__panel" aria-hidden="true" data-index="4" data-panel="fourthPanel" data-requirement="False">
         <h2 class="survey__panel__question">
-          <span class="visuallyhidden">Question 4 of 5 </span>Would you recommend our product to your friends?
+          <span class="visuallyhidden">Question 4 of 5 </span>Do you consider fiscal issues important to your political views?
         </h2>
         <div class="survey__panel__recommendation">
           <div class="form-group">
@@ -178,8 +178,44 @@
             <label for="yesrecommend">Yes</label>
           </div>
           <div class="form-group form-group-textarea">
-            <label for="recommendation">Additional message:</label>
+            <label for="recommendation">Optional comments:</label>
             <textarea name="recommendText" id="recommendation" spellcheck="false"></textarea>
+          </div>
+          <h2 class="survey__panel__question">
+            <span class="visuallyhidden">Question 4.1 of 5 </span> To what extent is housing affordability a priority for you ?
+          </h2>
+          <div class="survey__panel__likert">
+            <div class="slidecontainer">
+              <input type="range" min="1" max="5" value="3" class="slider" id="housingaffordibility">
+            </div>
+            <div class="likert-scale-labels">
+              <span class="likert-scale-label">Not At All</span>
+              <span class="likert-scale-label">Very Much</span>
+            </div>
+          </div>
+          <h2 class="survey__panel__question">
+            <span class="visuallyhidden">Question 3.2 of 5 </span> To what extent is funding healthcare a priority for you?
+          </h2>
+          <div class="survey__panel__likert">
+            <div class="slidecontainer">
+              <input type="range" min="1" max="5" value="3" class="slider" id="healthcare">
+            </div>
+            <div class="likert-scale-labels">
+              <span class="likert-scale-label">Not At All</span>
+              <span class="likert-scale-label">Very Much</span>
+            </div>
+          </div>
+          <h2 class="survey__panel__question">
+            <span class="visuallyhidden">Question 3.4 of 5 </span> To what extent is data privacy a priority for you?
+          </h2>
+          <div class="survey__panel__likert">
+            <div class="slidecontainer">
+              <input type="range" min="1" max="5" value="3" class="slider" id="dataprivacy">
+            </div>
+            <div class="likert-scale-labels">
+              <span class="likert-scale-label">Not At All </span>
+              <span class="likert-scale-label">Very Much </span>
+            </div>
           </div>
         </div>
         <p class="error-message"></p>
@@ -187,7 +223,7 @@
 
       <section class="survey__panel" aria-hidden="true" data-index="5" data-panel="fifthPanel" data-requirement="name;email;country;age">
         <h2 class="survey__panel__question">
-          <span class="visuallyhidden">Question 5 of 5 </span>Please fill your details
+          <span class="visuallyhidden">Question 5 of 5 </span>Please fill your details so we can send you the results of the survey
         </h2>
         <div class="survey__panel__personaldetails">
           <div class="form-group">
