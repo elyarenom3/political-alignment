@@ -10,7 +10,8 @@ In the future, we plan to make this more comprehensive by adding more diverse re
 
 For each of the 338 MP's in the house of commons, our program uses data scraping and natural language processing to identify which bills are pro and against certain issues, which are then matched against the information given by the participant in the survey and fed into our algorithm to make percentage matches.
 
-We thought that the most accessible way to make this available would be to make it a website, so we designed a user-friendly interface.
+We thought that the most accessible way to make this available would be to make it a website, so we designed a user-friendly interface and hosted it on github pages:
+here is the link: https://elyarenom3.github.io/political-alignment/
 
 
 
