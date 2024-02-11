@@ -10,6 +10,7 @@ public class Catagorizer {
         Housing(file);
         FN(file);
         HealthCare(file);
+        DataPrivacy(file);
 
     }
 
@@ -28,7 +29,7 @@ public class Catagorizer {
             String lowerSummary;
             lowerSummary = Summeries.get(keys[i]).toLowerCase();
             String noPunctuation = lowerSummary.replaceAll("[,.]", "");
-            String[] words = lowerSummary.split("");
+            String[] words = lowerSummary.split(" ");
             int n = 0;
             for (String w : Buzzwords) {
                 if (lowerSummary.contains(w)) {
@@ -49,12 +50,11 @@ public class Catagorizer {
                     }else{
                         issueScore.put(keys[i], (float) 0);
                     }
-
                     break;
                 }
-            }
-            if(issueScore.get(keys[i])==null){
-                issueScore.put(keys[i], (float) 0);
+                if(issueScore.get(keys[i])==null){
+                    issueScore.put(keys[i], (float) 0);
+                }
             }
         }
         CSVUpdater.updateCSVWithNewData(filepath, issueScore, IssueName);
@@ -62,33 +62,33 @@ public class Catagorizer {
     }
 
     public static void immigration(String filepath) {
-        String[] Buzzwords = {"immigration", "border", "foreign", "outside", "international", "carbon", "greenhouse gas",
-        "environment" };
-        String[] Pro= {"sustainabile", "green", "renewable", "wind","solar","footprint", "protect", "environment","carbon"};
-        String [] Anti ={"deregulate", "deregulation", "production", "fossil", "prices" };
-        String Name = "Environment";
+        String[] Buzzwords = {"immigration", "border", "foreign", "outside", "international", "immigrant", "asylum",
+        "refugee" };
+        String[] Pro= {"increase","protection","aid", "more", "open", "accept","admit","workers", "protect"};
+        String [] Anti ={"decrease", "deregulation", "cost", "housing"};
+        String Name = "Immigration";
         Issue(filepath, Buzzwords, Pro, Anti, Name);
     }
 
     public static void Housing(String filepath) {
         String[] Buzzwords = {"house", "housing", "cost of living", "climate change", "home", "carbon", "greenhouse gas",
                 "environment", "homeowner" };
-        String[] Pro= {"sustainabil", "price", "protect", "homeowner","canadian", "protect", "foreign",};
+        String[] Pro= {"sustainabil", "price", "protect", "homeowner","canadian", "protect", "foreign"};
         String [] Anti ={"buisness", "profit", "deregulate", "investment" };
         String Name = "Housing";
         Issue(filepath, Buzzwords, Pro, Anti, Name);
     }
 
     public static void HealthCare(String filepath) {
-        String[] Buzzwords = {"Health Care", "Doctor", "Hospital","Care","Medicine","Perscription" };
-        String[] Pro= {"wait", "price", "candian", "homeowner","canadian","free", "protect","tax","drug"};
-        String [] Anti ={"buisness", "profit", "deregulate" };
+        String[] Buzzwords = {"health care", "doctor", "hospital","care","=medicine","perscription" };
+        String[] Pro= {"wait", "price", "candian", "increase","canadian","free", "protect","tax","drug"};
+        String [] Anti ={"buisness", "profit", "deregulate" , "decrease"};
         String Name = "Health Care";
         Issue(filepath, Buzzwords, Pro, Anti, Name);
     }
 
     public static void FN(String filepath) {
-        String[] Buzzwords = {"first nations", "native americans", "tribe","american indian","reservation","first peoples" };
+        String[] Buzzwords = {"first nations", "native americans", "tribe","american indian","reservation","first peoples" ,"native"};
         String[] Pro= {"pipeline", "rights", "healthcare", "help","acknowlegement","aid"};
         String [] Anti ={"buisness", "profit", "deregulate" };
         String Name = "First Nations Rights";
@@ -99,14 +99,22 @@ public class Catagorizer {
         String[] Buzzwords = {"inflation", "cost of living", "minimum wage","economy","tax","first peoples" };
         String[] Pro= {"pipeline", "rights", "healthcare", "help","acknowlegement","aid"};
         String [] Anti ={"buisness", "profit", "deregulate" };
-        String Name = "First Nations Rights";
+        String Name = "Finances";
         Issue(filepath, Buzzwords, Pro, Anti, Name);
     }
     public static void lgbt(String filepath) {
         String[] Buzzwords = {"sexual orientation", "gender", "lgbt", "twin spirit"};
-        String[] Pro= {"rights", };
-        String [] Anti ={"religion", "christian", };
+        String[] Pro= {"rights", "discrimination", "based","the" };
+        String [] Anti ={"religion", "christian" };
         String Name = "LGBTQ";
+        Issue(filepath, Buzzwords, Pro, Anti, Name);
+    }
+
+    public static void DataPrivacy(String filepath) {
+        String[] Buzzwords = new String[]{"Money"};
+        String[] Pro = new String[]{"privacy"};
+        String[] Anti = new String[]{"money"};
+        String Name = "Data Privacy";
         Issue(filepath, Buzzwords, Pro, Anti, Name);
     }
 

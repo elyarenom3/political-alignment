@@ -36,7 +36,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Catagorizer">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Catagorizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Catagorizer" />
       <module name="political-alignment" />
@@ -53,8 +53,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Catagorizer" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Catagorizer" />
       </list>
     </recent_temporary>
   </component>
@@ -66,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1707644768322</updated>
-      <workItem from="1707644769710" duration="2724000" />
+      <workItem from="1707644769710" duration="8586000" />
     </task>
     <servers />
   </component>
