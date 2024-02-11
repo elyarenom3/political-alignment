@@ -4,7 +4,7 @@ public class Catagorizer {
 
     public static void main(String[] args) {
         String file = "/Users/alexmiller/HackStuff/DataSet copy.csv";
-        envir(file);
+        immigration(file);
         lgbt(file);
         Economy(file);
         Housing(file);
@@ -61,8 +61,8 @@ public class Catagorizer {
 
     }
 
-    public static void envir(String filepath) {
-        String[] Buzzwords = {"sustainability", "renewable energy", "carbon footprint", "climate change", " oil", "carbon", "greenhouse gas",
+    public static void immigration(String filepath) {
+        String[] Buzzwords = {"immigration", "border", "foreign", "outside", "international", "carbon", "greenhouse gas",
         "environment" };
         String[] Pro= {"sustainabile", "green", "renewable", "wind","solar","footprint", "protect", "environment","carbon"};
         String [] Anti ={"deregulate", "deregulation", "production", "fossil", "prices" };
