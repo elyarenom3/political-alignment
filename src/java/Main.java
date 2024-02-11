@@ -8,11 +8,13 @@ import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 public class Main {
+
     public static void main(String[] args){
         String postal ="H2W 1L4";
-        WebScraper.scrapeMemberInfo(WebScraper.buildSearchUrl(postal));
+        WebScraper.scrapeMemberInfo(WebScraper.accessWebsite(WebScraper.buildSearchUrl(postal)));
         System.out.println(WebScraper.accessWebsite(WebScraper.buildSearchUrl(postal)));
         Algorythm test =new Algorythm(postal,"/Users/alexmiller/HackStuff/","DataSet copy.csv");
+        HashMap<String, String> votres = new HashMap<>();
         test.addDemo("Income", 2);
         test.addDemo("Groups", 1);
         test.addDemo("Gender", 0);
@@ -29,5 +31,7 @@ public class Main {
         }
         System.out.println(test.TOTALSCORE());
 
+
     }
+
 }
