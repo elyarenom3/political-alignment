@@ -107,8 +107,8 @@ public class Algorythm {
         float ik = Importance[p];
         float et = total(Effects);
         float ek = Effects[p];
-        float imp = it/ik;
-        float effect = et/ek;
+        float imp = ik/it;
+        float effect = ek/et;
         String s = "";
         switch (p) {
             case (0):
@@ -133,8 +133,9 @@ public class Algorythm {
                 s = "Data Privacy";
                 break;
         }
-        System.out.println(s+"impscore: "+imp);
-        System.out.println(s+"effectscore: "+imp);
+        //System.out.println(s+"impscore: "+imp);
+        //
+        //System.out.println(s+"effectscore: "+imp);
         Map<String, String> bill_data;
         try {
             bill_data = CSVtoHashMap.getVotes(filelocation + fileName, "Bill Name", s);
@@ -153,8 +154,13 @@ public class Algorythm {
         float score = 0;
         for (String r : floats.keySet()) {
             if (votes.get(r) != null ) {
-                if(votes.get(r).toLowerCase().equals("paired")){
-                    if(votes.get(r).toLowerCase().equals("yea")){sum = sum + floats.get(r);
+
+                if(!votes.get(r).toLowerCase().equals("paired")){
+                    if(votes.get(r).toLowerCase().equals("yea")){
+                        sum = sum + floats.get(r);
+                        n++;}
+                    if(votes.get(r).toLowerCase().equals("nay")){
+                        //sum = sum - floats.get(r);
                         n++;}
                 }
 
@@ -165,6 +171,7 @@ public class Algorythm {
         }
 
         if(n!=0){
+            System.out.println(imp);
             score = sum/n;
             return score * imp * effect;
         }else{
@@ -182,7 +189,10 @@ public class Algorythm {
         for(int i=0; i<7; i++){
             num=num+Issuemath(i);
         }
-        return num;
+        for(int i=0; i<7; i++){
+            dem=dem+(Importance[i]/totali) * (Effects[i]/totale) ;
+        }
+        return num/dem*100;
     }
 
 

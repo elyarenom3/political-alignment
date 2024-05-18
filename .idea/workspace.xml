@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b4ebb27-8527-451f-8509-6cc57e6513e3" name="Changes" comment="" />
+    <list default="true" id="9b4ebb27-8527-451f-8509-6cc57e6513e3" name="Changes" comment="fixed">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/accessors_smart_2_4_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/political-alignment/Algorythm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/political-alignment/Algorythm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/political-alignment/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/political-alignment/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/political-alignment/NLPCategorizer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/political-alignment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/political-alignment.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Algorythm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Algorythm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/NLPCategorizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/ApiController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,21 +31,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;d41d8cd98f00b204e9800998ecf8427e&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Catagorizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Catagorizer" />
@@ -67,10 +79,18 @@
       <option name="presentableId" value="Default" />
       <updated>1707644768322</updated>
       <workItem from="1707644769710" duration="11989000" />
+      <workItem from="1707852184074" duration="2541000" />
+      <workItem from="1707857310654" duration="73000" />
+      <workItem from="1707880671488" duration="679000" />
+      <workItem from="1708543059435" duration="1030000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed" />
   </component>
 </project>
