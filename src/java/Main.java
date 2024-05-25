@@ -36,7 +36,6 @@ public class Main {
         System.out.println(test.Issuemath(0));
         System.out.println(test.TOTALSCORE());
 
-
     }
 
 }

@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b4ebb27-8527-451f-8509-6cc57e6513e3" name="Changes" comment="fixed">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/accessors_smart_2_4_9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/political-alignment/Algorythm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/political-alignment/Algorythm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/political-alignment/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/political-alignment/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/political-alignment/NLPCategorizer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/political-alignment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/political-alignment.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Algorythm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Algorythm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/NLPCategorizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/ApiController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +77,7 @@
       <workItem from="1707857310654" duration="73000" />
       <workItem from="1707880671488" duration="679000" />
       <workItem from="1708543059435" duration="1030000" />
+      <workItem from="1715994949067" duration="902000" />
     </task>
     <servers />
   </component>
